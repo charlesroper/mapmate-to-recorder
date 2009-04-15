@@ -2,13 +2,9 @@ h1. Mapmate to Recorder
 
 This is a suite of SQL queries, tools and techniques for tranferring data from Mapmate to Recorder 6, both of which are biological recording databases.
 
-<hr />
-
 h2. Contents
 
 * "The Archive Method":#archive-method
-
-<hr />
 
 h3(#archive-method). The Archive Method
 
