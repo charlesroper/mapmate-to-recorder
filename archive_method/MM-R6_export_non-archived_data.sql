@@ -12,22 +12,22 @@ SELECT
 , (
   IIF
   (
-    Records.Quantity=-1, 'd',
+    Records.Quantity=-1, 'Dominant',
     IIF
     (
-      Records.Quantity=-2, 'a',
+      Records.Quantity=-2, 'Abundant',
       IIF
       (
-        Records.Quantity=-3, 'f',
+        Records.Quantity=-3, 'Frequent',
         IIF
         (
-          Records.Quantity=-4, 'o',
+          Records.Quantity=-4, 'Occassional',
           IIF
           (
-            Records.Quantity=-5, 'r',
+            Records.Quantity=-5, 'Rare',
             IIF
             (
-              Records.Quantity=-6, 'vr',
+              Records.Quantity=-6, 'VeryRare',
               IIF
               (
                 Records.Quantity=-7, 'NotPresent',
