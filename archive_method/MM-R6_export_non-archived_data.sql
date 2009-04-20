@@ -1,5 +1,4 @@
-SELECT
-  Records.[_guk]
+SELECT Records.[_guk]
 , Records.[_guk] AS MapMate_guk
 , [Taxa\Default].Taxon
 , [Sites\Default].Name      AS Location_name
@@ -33,7 +32,19 @@ SELECT
                 Records.Quantity=-7, 'NotPresent',
                 IIF
                 (
-                  Records.Quantity=0, 'Present ', Records.Quantity
+                  Records.Quantity=-21,'LocallyDominant',
+                  IIF
+                  (
+                    Records.Quantity=-22,'LocallyAbundant',
+                    IIF
+                    (
+                      Records.Quantity=-23,'LocallyFrequent',
+                      IIF
+                      (
+                        Records.Quantity=0, 'Present ', Records.Quantity
+                      )
+                    )
+                  )
                 )
               )
             )
@@ -45,7 +56,7 @@ SELECT
   ) & (
   IIF
   (
-    [Records]![*Stage]='0', 'None',
+    [Records]![*Stage]='0', 'Taxon',
     IIF
     (
       [Records]![*Stage]='l', 'FirstWinter',
@@ -98,29 +109,21 @@ SELECT
 , Recorders_1.Name AS Determiner
 , Methods.Method
 , Records.Comment
-FROM
-  ((((((Records
+FROM ((((((Records
   INNER JOIN [Taxa\Default]
-  ON
-    Records.[*Taxon] = [Taxa\Default].[_guk])
+  ON Records.[*Taxon] = [Taxa\Default].[_guk])
   INNER JOIN [Sites\Default]
-  ON
-    Records.[*Site] = [Sites\Default].[_guk])
+  ON Records.[*Site] = [Sites\Default].[_guk])
   INNER JOIN Methods
-  ON
-    Records.[*Method] = Methods.[_guk])
+  ON Records.[*Method] = Methods.[_guk])
   INNER JOIN Recorders
-  ON
-    Records.[*Recorder] = Recorders.[_guk])
+  ON Records.[*Recorder] = Recorders.[_guk])
   INNER JOIN TaxonStage
-  ON
-    Records.[*Stage] = TaxonStage.[_guk])
+  ON Records.[*Stage] = TaxonStage.[_guk])
   INNER JOIN TaxonSex
-  ON
-    Records.[*Sex] = TaxonSex.[_guk])
+  ON Records.[*Sex] = TaxonSex.[_guk])
   INNER JOIN Recorders AS Recorders_1
-  ON
-    Records.[*Identifier] = Recorders_1.[_guk]
+  ON Records.[*Identifier] = Recorders_1.[_guk]
 WHERE
   (
     (
