@@ -16,4 +16,5 @@ An SQL query for extracting data using the _Archive Method_.
 * MM-R6_export_non-archived_data.sql
 
 h3(#thanks). Thanks
+
 Much of the original work on these export queries were done by Stuart Ball of JNCC, "Martin Harvey":http://sites.google.com/site/kitenetter/ and Brian Miller
