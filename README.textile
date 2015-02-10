@@ -1,12 +1,12 @@
 h1. Mapmate to Recorder Query
 
-This is an SQL query for MapMate that will export records from MapMate into a format that can be consumed by the import wizard in Recorder 6.
+This is an SQL query for "MapMate":http://www.mapmate.co.uk/ that will export records from MapMate into a format that can be consumed by the import wizard in "Recorder 6":http://jncc.defra.gov.uk/page-4592.
 
 The SQL queries are (usually) generated in Access and are virtually unreadable in their raw, unformatted state; therefore, they have been formatted using "SQLinForm":http://www.sqlinform.com/, the online SQL formatting tool, in order to make them more readable to the human eye.
 
 h2. The Archive Method
 
-This method uses MapMate’s record archive functionality to isolate “batches” of records for import into Recorder. It works by archiving records in MapMate so that they are excluded from a special export query. Briefly, the process is as follows:
+This export method uses MapMate’s record archive functionality to isolate “batches” of records for import into Recorder. It works by archiving records in MapMate so that they are excluded from a special export query. Briefly, the process is as follows:
 
 # Sync a dataset into MapMate
 # Run the *Recorder 6: export non-archived records* user query
