@@ -1,20 +1,21 @@
-h2. Mapmate to Recorder
+h1. Mapmate to Recorder Query
 
-This is a suite of SQL queries, tools and techniques for tranferring data from Mapmate to Recorder 6, both of which are biological recording databases.
+This is an SQL query for MapMate that will export records from MapMate into a format that can be consumed by the import wizard in Recorder 6.
 
 The SQL queries are (usually) generated in Access and are virtually unreadable in their raw, unformatted state; therefore, they have been formatted using "SQLinForm":http://www.sqlinform.com/, the online SQL formatting tool, in order to make them more readable to the human eye.
 
-h3. Contents
+h2. The Archive Method
 
-* "The Archive Method":#archive-method
-* "Thanks":#thanks
+This method uses MapMate’s record archive functionality to isolate “batches” of records for import into Recorder. It works by archiving records in MapMate so that they are excluded from a special export query. Briefly, the process is as follows:
 
-h3(#archive-method). The Archive Method
+# Sync a dataset into MapMate
+# Run the *Recorder 6: export non-archived records* user query
+# Save the resulting data to a tab-text file
+# Import the (cleaned) data into Recorder
+# Once imported successfully, select all records in MapMate, right-click and select *Archive Selected Records…*
 
-An SQL query for extracting data using the _Archive Method_.
+Note, you may (probably will) need to clean the data before importing into Recorder.
 
-* MM-R6_export_non-archived_data.sql
+h2(#thanks). Thanks
 
-h3(#thanks). Thanks
-
-Much of the original work on these export queries were done by Stuart Ball of JNCC, "Martin Harvey":http://sites.google.com/site/kitenetter/ and Brian Miller
+Much of the original work on this export query was done by Stuart Ball, "Martin Harvey":http://sites.google.com/site/kitenetter/ and Brian Miller.
